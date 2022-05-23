@@ -1,0 +1,58 @@
+table {
+
+    margin-left: 30%;
+    width: 900px;
+    background-color:antiquewhite;
+    flex-shrink: inherit;
+
+  }
+.mat-header-cell {
+    background:black;
+    color: white;
+    font-size: medium;
+    font-weight: bold;    
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.search {
+  margin-left: 10%;
+  margin-right: 15%;
+  margin-top: 50px ;
+}
+
+
+.employee-page {
+  background-image: url(src\assets\images\loginbk.jpg);
+  background-size: cover;
+  height: 938px;
+}
+
+
+.chart {
+  width: 600px;
+  height: 300px;
+  display: inline-flexbox;
+}
+
+.taable {
+  float:left;
+  padding: 20px;
+}
+
+.report {
+  margin-right: 10%;
+}
+
+.language {
+  margin-top: 0%;
+  width: 200px;
+  font-size: 18px;
+
+}
+
+.translate {
+  margin-right: 55%;
+}

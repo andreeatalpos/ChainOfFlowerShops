@@ -1,0 +1,32 @@
+<div  fxLayout="row" fxLayoutAlign="center center" class="login-class">
+    <mat-card class="login-box" fxFlex="25%">
+        <mat-toolbar>Login Page</mat-toolbar>
+        <mat-card-content fxLayout="column" class="login-form">
+            <mat-form-field>
+                <mat-icon matPrefix> perm_identity</mat-icon>
+                <input matInput placeholder="Username" type="text" name="username" [(ngModel)]="user.username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-icon matPrefix>fingerprint</mat-icon>
+                <input matInput placeholder="Password" type="password" name="password"  [(ngModel)]="user.password">
+            </mat-form-field>
+            <!-- <mat-radio-button class="example-radio-button" type="radio" *ngFor="let r of roles" value="{{r}}" >
+                {{user.role}} <i>{{r}}</i>
+              </mat-radio-button> -->
+              <div class="some class">
+              <p style="font-size:18px">Choose your role: </p> <br>
+              <input type="radio" id="admin" name="role" value="admin" [(ngModel)]="user.role"> 
+              <label style="font-size:16px" for="admin">Administrator</label>
+              <input type="radio" id="employee" name="role" value="employee" [(ngModel)]="user.role">
+              <label style="font-size:16px" for="employee">Employee</label>
+            </div>
+            <br>
+            <br>
+        <button mat-raised-button type="submit" (click)=loginUser() >Login</button>
+        <br>
+        <div class="alert alert-warning" style="font-size:45px; color:red" *ngIf='invalidLogin'><b>{{errorMessage}}</b></div>
+        </mat-card-content>
+    </mat-card>
+  
+
+</div>

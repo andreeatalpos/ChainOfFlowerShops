@@ -1,0 +1,26 @@
+{
+    "Add new flower" : "Ajouter une fleur",
+    "Show all flowers" : "Lister des fleurs",
+    "Create report:" : "Creer un rapport:",
+    "Filter by:" : "Filtrer par:",
+    "Filtering data" : "Filtrer les infos",
+    "Search flower" : "Chercher un fleur",
+    "Select language:":"Choisir la langue:",
+    "Employee Page": "Page d'employee",
+    "Logout" : "Deconnecter",
+    "Denumire" : "Nom",
+    "Culoare" : "Couleur",
+    "Pret" : "Prix",
+    "Cantitate" : "Montant",
+    "Disponibilitate" : "Disponibilite",
+    "Action": "Action",
+    "Username" : "Nom",
+    "Role" : "Role",
+    "Florarie" : "Fleuriste",
+    "Search user" : "Chercher d'utilizateur",
+    "Admin Page" : "Page d'Administrateur",
+    "Add new user" : "Ajouter un utilisateur",
+    "Show all users" : "Affiche les utilisateurs",
+    "Filter users" : "Filtre les utilisateurs"
+    
+}

@@ -1,0 +1,47 @@
+table {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color:antiquewhite;
+    margin-top: 50px ;
+  }
+  
+  .button {
+    width :auto;
+  }
+.mat-header-cell {
+    background:black;
+    color: white;
+    font-size: medium;
+    font-weight: bold;    
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+  margin-top: 0%;
+}
+
+.search {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 50px ;
+}
+
+.admin-page {
+  background-image: url(src\assets\images\loginbk.jpg);
+  background-size: cover;
+  height: 938px;
+}
+
+.language {
+  margin-top: 0%;
+  width: 200px;
+  font-size: 18px;
+
+}
+
+.translate {
+  margin-right: 55%;
+}
+
+

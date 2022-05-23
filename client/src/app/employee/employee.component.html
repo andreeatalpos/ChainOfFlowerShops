@@ -1,0 +1,125 @@
+<div class="employee-page">
+
+  <p>
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>work</mat-icon>
+      </button>
+      <span>{{'Employee Page'|translate}}</span>
+      <span class="example-spacer"></span>
+
+      <div class ="translate">
+      <mat-form-field appearance="fill" class="language">
+        <mat-label>{{'Select language:' | translate}} </mat-label>
+        <mat-select [(ngModel)]="language" name="language">
+          <mat-option *ngFor="let language of languages" [value]="language">
+            {{language}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-icon-button (click)="translate()" class="report" >
+        <mat-icon> translate</mat-icon>
+      </button>
+    </div>
+
+
+      <button mat-raised-button color="warn" (click)="openDialog()">{{'Add new flower'| translate}}</button>
+      <button mat-raised-button color="warn" style="margin-left: 8px;" (click)="getAllFlowers()">{{'Show all flowers'| translate}}</button>
+      <button mat-raised-button color="warn" style="margin-left: 8px;" (click)="logout()">{{'Logout' | translate}}</button>
+    </mat-toolbar>
+  </p>
+
+
+  <div class="my-table">
+    <mat-form-field appearance="fill" class="search">
+      <mat-label>{{'Search flower'| translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+      <button matSuffix mat-icon-button (click)="searchFlower(value)">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>{{'Create report:'|translate}}</mat-label>
+      <mat-select [(ngModel)]="report" name="report">
+        <mat-option *ngFor="let report of reports" [value]="report">
+          {{report}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-icon-button (click)="createReport()" class="report" >
+      <mat-icon> insert_drive_file</mat-icon>
+    </button>
+
+
+    <mat-form-field appearance="fill" class="filter">
+      <mat-label>{{'Filter by:'| translate}} </mat-label>
+      <mat-select [(ngModel)]="filter" name="filter">
+        <mat-option *ngFor="let filter of filters" [value]="filter">
+          {{filter}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="standard">
+      <mat-label>{{'Filtering data'| translate}}</mat-label>
+      <input matInput placeholder="Select" type="text" [(ngModel)]="filterValue">
+    </mat-form-field>
+    <button mat-icon-button (click)="filtering()" >
+      <mat-icon>filter_list</mat-icon>
+    </button>
+    <div class="taable">
+      <div class="chart" *ngIf="showCharts">
+      <app-chart>
+      </app-chart>
+      </div>
+    </div>
+    <div class="taable">
+      <table class="table" mat-table [dataSource]="datasource" class="mat-elevation-z8">
+        <ng-container matColumnDef="denumire">
+          <th mat-header-cell *matHeaderCellDef>{{'Denumire'|translate}}</th>
+          <td mat-cell *matCellDef="let element"> {{element.denumire}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="culoare">
+          <th mat-header-cell *matHeaderCellDef>{{'Culoare'| translate}}</th>
+          <td mat-cell *matCellDef="let element"> {{element.culoare}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pret">
+          <th mat-header-cell *matHeaderCellDef>{{'Pret'| translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{element.pret}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cantitate">
+          <th mat-header-cell *matHeaderCellDef>{{'Cantitate' | translate}}</th>
+          <td mat-cell *matCellDef="let element"> {{element.cantitate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="disponibilitate">
+          <th mat-header-cell *matHeaderCellDef>{{'Disponibilitate'| translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{element.disponibilitate}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>{{'Action'| translate}} </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="editFlower(element)" color="primary">
+              <mat-icon> edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteFlower(element.denumire, element.culoare)" color="warn">
+              <mat-icon> delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
